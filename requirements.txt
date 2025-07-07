@@ -5,3 +5,11 @@ langchain-openai
 langchain-huggingface
 langchain-community
 flask
+sentence-transformers==2.2.2
+pypdf
+python-dotenv
+langchain_experimental
+pinecone[grpc]
+langchain-pinecone
+ipynb
+-e .

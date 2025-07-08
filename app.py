@@ -35,13 +35,49 @@ retriever = docsearch.as_retriever(
     }
 )
 
-llm = ChatGroq(groq_api_key = GROQ_API, model = "")
+llm = ChatGroq(groq_api_key = GROQ_API, model = "gemma2-9b-it")
+
+prompt = ChatPromptTemplate.from_messages(
+    [
+        ("system",system_prompt),
+        ("human","{input}")
+    ]
+)
+
+question_answer_chain = create_stuff_documents_chain(llm, prompt)
+
+rag_chain = create_retrieval_chain(retriever, question_answer_chain)
 
 app = Flask(__name__)
 
-@app.route("/")
+chat_history = []
+
+@app.route("/", methods = ["GET", "POST"])
 def index():
-    return render_template("chat.html")
+    global chat_history
+    if request.method == "POST":
+        user_msg = request.form["user_input"]
+        chat_history.append(
+            {
+                "role" : "user",
+                "text" : user_msg
+            }
+        )
+        result = rag_chain.invoke(
+            {
+                "input" : user_msg
+            }
+        )
+
+        bot_msg = result['answer']
+        chat_history.append(
+            {
+                "role" : "bot",
+                "text" : bot_msg
+            }
+        )
+
+    return render_template("chat.html", chat_history=chat_history)
 
 if __name__=="__main__":
     app.run(debug=True)

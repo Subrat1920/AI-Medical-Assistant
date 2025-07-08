@@ -1,15 +1,13 @@
-langchain
-langchain-core
-langchain-ollama
-langchain-openai
-langchain-huggingface
-langchain-community
 flask
-sentence-transformers==2.2.2
-pypdf
-python-dotenv
-langchain_experimental
+pinecone
 pinecone[grpc]
+dotenv
+langchain
+langchain-community
+langchain-groq
+langchain-huggingface
 langchain-pinecone
-ipynb
--e .
+pypdf
+ipykernel
+sentence-transformers
+pinecone-client

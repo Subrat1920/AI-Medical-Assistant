@@ -2,7 +2,7 @@
 
 AI-Medico-Chatbot is an intelligent conversational assistant tailored for the medical domain. It leverages Retrieval-Augmented Generation (RAG) with Pinecone and a large language model (LLM) from Groq to provide accurate and contextual responses based on domain-specific documents.
 
-![banner](https://img.shields.io/badge/Python-3.11-blue?style=flat-square)
+![banner](https://img.shields.io/badge/Python-3.13-blue?style=flat-square)
 ![framework](https://img.shields.io/badge/Flask-Web%20App-ff69b4)
 
 ---

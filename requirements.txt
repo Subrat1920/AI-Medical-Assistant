@@ -10,4 +10,3 @@ langchain-pinecone
 pypdf
 ipykernel
 sentence-transformers
-pinecone-client

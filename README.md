@@ -24,7 +24,7 @@ AI-Medico-Chatbot is an intelligent conversational assistant tailored for the me
 | Component | Technology |
 |----------|------------|
 | Frontend | HTML, CSS, JavaScript (ChatGPT-style UI) |
-| Backend | Flask, Python 3.11 |
+| Backend | Flask, Python 3.13 |
 | Vector DB | Pinecone |
 | Embeddings | HuggingFace Sentence Transformers |
 | LLM | [Groq](https://groq.com/) (e.g., Gemma-2B / Gemma-7B) |
